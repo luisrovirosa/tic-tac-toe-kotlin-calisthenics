@@ -25,16 +25,8 @@ class Board() {
     }
 
     private fun hasFilledAnyRow(thePlayer: Player): Boolean {
-//        return 0.rangeTo(2)
-//            .filter { row -> hasFilledTheRow(thePlayer, row) }
-//            .isNotEmpty()
-
-        for (rowNumber in 0..2) {
-            if (row(rowNumber).belongsAllTo(thePlayer)) {
-                return true
-            }
-        }
-        return false
+        return 0.rangeTo(2)
+            .any { row(it).belongsAllTo(thePlayer) }
     }
 
     private fun row(rowNumber: Int): Fields {
