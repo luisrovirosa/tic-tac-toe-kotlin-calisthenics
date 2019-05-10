@@ -6,19 +6,19 @@ class Board {
     }
 
     fun winner(): Player {
-        if (Player("X") == value[Position(0, 0)]
-            && Player("X") == value[Position(0, 1)]
-            && Player("X") == value[Position(0, 2)]
-        ) {
+        if (hasFilledOneRow(Player("X"))) {
             return Player("X")
         }
-        if (Player("O") == value[Position(0, 0)]
-            && Player("O") == value[Position(0, 1)]
-            && Player("O") == value[Position(0, 2)]
-        ) {
+        if (hasFilledOneRow(Player("O"))) {
             return Player("O")
         }
         return NoPlayer()
+    }
+
+    private fun hasFilledOneRow(playerX: Player): Boolean {
+        return (playerX == value[Position(0, 0)]
+                && playerX == value[Position(0, 1)]
+                && playerX == value[Position(0, 2)])
     }
 
 }
