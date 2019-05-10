@@ -29,25 +29,20 @@ class Board() {
 //            .filter { row -> hasFilledTheRow(thePlayer, row) }
 //            .isNotEmpty()
 
-        for (row in 0..2) {
-            if (hasFilledTheRow(thePlayer, row)) {
+        for (rowNumber in 0..2) {
+            if (row(rowNumber).belongsAllTo(thePlayer)) {
                 return true
             }
         }
         return false
     }
 
-    private fun hasFilledTheRow(player: Player, row: Int): Boolean {
-        return row(row).belongsAllTo(player)
-    }
-
     private fun row(rowNumber: Int): Fields {
-        val fields = Fields(
+        return Fields(
             value[Position(rowNumber, 0)]!!,
             value[Position(rowNumber, 1)]!!,
             value[Position(rowNumber, 2)]!!
         )
-        return fields
     }
 
 }
