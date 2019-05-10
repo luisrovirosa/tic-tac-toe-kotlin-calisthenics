@@ -18,7 +18,7 @@ class Board {
         ) {
             return Player("O")
         }
-        return NoWinner()
+        return NoPlayer()
     }
 
 }

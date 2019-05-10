@@ -10,7 +10,7 @@ class TicTacToeShould {
 
         val winner = ticTacToe.winner()
 
-        assertEquals(NoWinner(), winner)
+        assertEquals(NoPlayer(), winner)
     }
 
     @ParameterizedTest
@@ -60,7 +60,7 @@ class TicTacToeShould {
 
         val winner = ticTacToe.winner()
 
-        assertEquals(NoWinner(), winner)
+        assertEquals(NoPlayer(), winner)
     }
 
 }
