@@ -38,11 +38,7 @@ class Board() {
     }
 
     private fun row(rowNumber: Int): Fields {
-        return Fields(
-            value[Position(rowNumber, 0)]!!,
-            value[Position(rowNumber, 1)]!!,
-            value[Position(rowNumber, 2)]!!
-        )
+        return Fields(value.filterKeys { position -> position.inRow(rowNumber) }.values)
     }
 
 }

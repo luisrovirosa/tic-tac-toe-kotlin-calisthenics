@@ -11,4 +11,8 @@ class Position(val row: Int, val column: Int) {
         result = 31 * result + column
         return result
     }
+
+    fun inRow(rowNumber: Int): Boolean {
+        return row == rowNumber
+    }
 }
