@@ -38,7 +38,11 @@ class Board() {
     }
 
     private fun hasFilledTheRow(player: Player, row: Int): Boolean {
-        val fields = Fields(value[Position(row, 0)]!!, value[Position(row, 1)]!!, value[Position(row, 2)]!!)
+        val fields = Fields(
+            value[Position(row, 0)]!!,
+            value[Position(row, 1)]!!,
+            value[Position(row, 2)]!!
+        )
         return fields.belongsAllTo(player)
     }
 
