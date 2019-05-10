@@ -28,10 +28,10 @@ class Board {
         return false
     }
 
-    private fun hasFilledTheRow(playerX: Player, row: Int): Boolean {
-        return (playerX == value[Position(row, 0)]
-                && playerX == value[Position(row, 1)]
-                && playerX == value[Position(row, 2)])
+    private fun hasFilledTheRow(player: Player, row: Int): Boolean {
+        return (player == value[Position(row, 0)]
+                && player == value[Position(row, 1)]
+                && player == value[Position(row, 2)])
     }
 
 }
