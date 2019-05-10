@@ -6,10 +6,16 @@ class Board {
     }
 
     fun winner(): Player {
-        if (Player("X") == value[Position(0,0)]){
+        if (Player("X") == value[Position(0, 0)]
+            && Player("X") == value[Position(0, 1)]
+            && Player("X") == value[Position(0, 2)]
+        ) {
             return Player("X")
         }
-        if (Player("O") == value[Position(0,0)]){
+        if (Player("O") == value[Position(0, 0)]
+            && Player("O") == value[Position(0, 1)]
+            && Player("O") == value[Position(0, 2)]
+        ) {
             return Player("O")
         }
         return NoWinner()
