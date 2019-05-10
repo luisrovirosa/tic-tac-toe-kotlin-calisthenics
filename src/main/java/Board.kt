@@ -16,6 +16,10 @@ class Board {
     }
 
     private fun hasFilledAnyRow(playerX: Player): Boolean {
+//        return 0.rangeTo(2)
+//            .filter { row -> hasFilledTheRow(playerX, row) }
+//            .isNotEmpty()
+
         for (row in 0..2) {
             if (hasFilledTheRow(playerX, row)) {
                 return true
