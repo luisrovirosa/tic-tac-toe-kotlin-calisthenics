@@ -2,8 +2,8 @@ class Board() {
     var value = HashMap<Position, Field>()
 
     init {
-        for(col in 0..2){
-            for (row in 0..2){
+        for (col in 0..2) {
+            for (row in 0..2) {
                 value[Position(row, col)] = Field.of(NoPlayer())
             }
         }

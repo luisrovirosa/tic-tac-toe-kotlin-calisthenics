@@ -1,6 +1,6 @@
 class Fields(private val fields: Collection<Field>) {
     fun belongsAllTo(player: Player): Boolean {
-        return fields.filter { field -> field.belongsTo(player) }.size == fields.size
+        return fields.all { field -> field.belongsTo(player) }
     }
 
 }
