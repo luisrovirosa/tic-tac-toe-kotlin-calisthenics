@@ -6,16 +6,16 @@ class Board {
     }
 
     fun winner(): Player {
-        if (hasFilledOneRow(Player("X"))) {
+        if (hasFilledAnyRow(Player("X"))) {
             return Player("X")
         }
-        if (hasFilledOneRow(Player("O"))) {
+        if (hasFilledAnyRow(Player("O"))) {
             return Player("O")
         }
         return NoPlayer()
     }
 
-    private fun hasFilledOneRow(playerX: Player): Boolean {
+    private fun hasFilledAnyRow(playerX: Player): Boolean {
         for (row in 0..2) {
             if (playerX == value[Position(row, 0)]
                 && playerX == value[Position(row, 1)]
