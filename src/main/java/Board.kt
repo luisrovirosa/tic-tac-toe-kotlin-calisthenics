@@ -15,13 +15,13 @@ class Board {
         return NoPlayer()
     }
 
-    private fun hasFilledAnyRow(playerX: Player): Boolean {
+    private fun hasFilledAnyRow(thePlayer: Player): Boolean {
 //        return 0.rangeTo(2)
-//            .filter { row -> hasFilledTheRow(playerX, row) }
+//            .filter { row -> hasFilledTheRow(thePlayer, row) }
 //            .isNotEmpty()
 
         for (row in 0..2) {
-            if (hasFilledTheRow(playerX, row)) {
+            if (hasFilledTheRow(thePlayer, row)) {
                 return true
             }
         }
