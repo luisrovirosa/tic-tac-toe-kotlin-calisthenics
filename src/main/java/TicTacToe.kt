@@ -5,8 +5,11 @@ class TicTacToe {
         return board.winner()
     }
 
+    private var currentPlayer = Player("X")
+
     fun play(position: Position) {
-        board.play(Player("X"), position)
+        board.play(currentPlayer, position)
+        currentPlayer = if (currentPlayer == Player("X")) Player("O") else Player(("X"))
     }
 
 }

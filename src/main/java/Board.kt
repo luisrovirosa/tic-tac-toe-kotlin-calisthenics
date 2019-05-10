@@ -9,6 +9,9 @@ class Board {
         if (Player("X") == value[Position(0,0)]){
             return Player("X")
         }
+        if (Player("O") == value[Position(0,0)]){
+            return Player("O")
+        }
         return NoWinner()
     }
 
