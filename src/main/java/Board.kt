@@ -1,8 +1,18 @@
 class Board {
-    var value = hashMapOf<Position, Player>()
+    var value = hashMapOf(
+        Position(0,0) to Field.of(NoPlayer()),
+        Position(0,1) to Field.of(NoPlayer()),
+        Position(0,2) to Field.of(NoPlayer()),
+        Position(1,0) to Field.of(NoPlayer()),
+        Position(1,1) to Field.of(NoPlayer()),
+        Position(1,2) to Field.of(NoPlayer()),
+        Position(2,0) to Field.of(NoPlayer()),
+        Position(2,1) to Field.of(NoPlayer()),
+        Position(2,2) to Field.of(NoPlayer())
+    )
 
     fun play(player: Player, position: Position) {
-        value[position] = player
+        value[position] = Field.of(player)
     }
 
     fun winner(): Player {
@@ -29,9 +39,9 @@ class Board {
     }
 
     private fun hasFilledTheRow(player: Player, row: Int): Boolean {
-        return (player == value[Position(row, 0)]
-                && player == value[Position(row, 1)]
-                && player == value[Position(row, 2)])
+        return (value[Position(row, 0)]!!.belongsTo(player)
+                && value[Position(row, 1)]!!.belongsTo(player)
+                && value[Position(row, 2)]!!.belongsTo(player))
     }
 
 }
