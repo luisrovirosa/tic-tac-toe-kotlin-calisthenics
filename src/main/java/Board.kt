@@ -26,6 +26,11 @@ class Board {
                 && playerX == value[Position(1, 2)]){
             return true
         }
+        if (playerX == value[Position(2, 0)]
+                && playerX == value[Position(2, 1)]
+                && playerX == value[Position(2, 2)]){
+            return true
+        }
         return false
     }
 
