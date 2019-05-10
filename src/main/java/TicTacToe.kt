@@ -1,11 +1,11 @@
 class TicTacToe {
-    val board = Board()
+    private val board = Board()
+    private var currentPlayer = Player("X")
 
     fun winner(): Player {
         return board.winner()
     }
 
-    private var currentPlayer = Player("X")
 
     fun play(position: Position) {
         board.play(currentPlayer, position)
