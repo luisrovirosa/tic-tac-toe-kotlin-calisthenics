@@ -16,9 +16,17 @@ class Board {
     }
 
     private fun hasFilledOneRow(playerX: Player): Boolean {
-        return (playerX == value[Position(0, 0)]
+        if (playerX == value[Position(0, 0)]
                 && playerX == value[Position(0, 1)]
-                && playerX == value[Position(0, 2)])
+                && playerX == value[Position(0, 2)]){
+            return true
+        }
+        if (playerX == value[Position(1, 0)]
+                && playerX == value[Position(1, 1)]
+                && playerX == value[Position(1, 2)]){
+            return true
+        }
+        return false
     }
 
 }
