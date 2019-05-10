@@ -1,15 +1,14 @@
-class Board {
-    var value = hashMapOf(
-        Position(0,0) to Field.of(NoPlayer()),
-        Position(0,1) to Field.of(NoPlayer()),
-        Position(0,2) to Field.of(NoPlayer()),
-        Position(1,0) to Field.of(NoPlayer()),
-        Position(1,1) to Field.of(NoPlayer()),
-        Position(1,2) to Field.of(NoPlayer()),
-        Position(2,0) to Field.of(NoPlayer()),
-        Position(2,1) to Field.of(NoPlayer()),
-        Position(2,2) to Field.of(NoPlayer())
-    )
+class Board() {
+    var value = HashMap<Position, Field>()
+
+    init {
+        for(col in 0..2){
+            for (row in 0..2){
+                value[Position(row, col)] = Field.of(NoPlayer())
+            }
+        }
+    }
+
 
     fun play(player: Player, position: Position) {
         value[position] = Field.of(player)
