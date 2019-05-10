@@ -1,4 +1,4 @@
-class NoWinner : Player() {
+class NoWinner : Player("") {
     override fun equals(other: Any?): Boolean {
         return other is NoWinner
     }

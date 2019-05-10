@@ -1,5 +1,7 @@
 import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.ValueSource
 
 class TicTacToeShould {
     @Test
@@ -9,5 +11,20 @@ class TicTacToeShould {
         val winner = ticTacToe.winner()
 
         assertEquals(NoWinner(), winner)
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = [0])
+    fun `a X player wins when 3 fields of a row are taken by the same player`(row: Int) {
+        val ticTacToe = TicTacToe()
+        ticTacToe.play(Position(row, 0))
+        ticTacToe.play(Position((row + 1) % 3, 0))
+        ticTacToe.play(Position(row, 1))
+        ticTacToe.play(Position((row + 2) % 3, 0))
+        ticTacToe.play(Position(row, 2))
+
+        val winner = ticTacToe.winner()
+
+        assertEquals(Player("X"), winner)
     }
 }
