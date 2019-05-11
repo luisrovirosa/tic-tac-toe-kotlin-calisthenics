@@ -1,5 +1,5 @@
 class Board {
-    private val fields = TmpFields()
+    private val fields = Fields()
 
     init {
         for (col in 0..2) {
