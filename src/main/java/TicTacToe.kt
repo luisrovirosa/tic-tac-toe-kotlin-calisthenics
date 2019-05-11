@@ -3,10 +3,10 @@ class TicTacToe {
     private var currentPlayer = Player("X")
 
     fun winner(): Player {
-        if (board.hasFilledAnyRow(Player("X"))) {
+        if (board.hasWon(Player("X"))) {
             return Player("X")
         }
-        if (board.hasFilledAnyRow(Player("O"))) {
+        if (board.hasWon(Player("O"))) {
             return Player("O")
         }
         return NoPlayer()

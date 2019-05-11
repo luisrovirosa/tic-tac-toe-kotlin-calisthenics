@@ -13,7 +13,7 @@ class Board() {
         value[position] = Field.of(player)
     }
 
-    fun hasFilledAnyRow(thePlayer: Player): Boolean {
+    fun hasWon(thePlayer: Player): Boolean {
         return 0.rangeTo(2)
             .any { row(it).belongsAllTo(thePlayer) }
     }
