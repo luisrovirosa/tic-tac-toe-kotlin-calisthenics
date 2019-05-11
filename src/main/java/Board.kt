@@ -19,7 +19,8 @@ class Board() {
     }
 
     private fun hasFilledAnyColumn(player: Player): Boolean {
-        return col(0).belongsAllTo(player)
+        return 0.rangeTo(2)
+            .any { col(it).belongsAllTo(player) }
     }
 
     private fun hasFilledAnyRow(thePlayer: Player): Boolean {

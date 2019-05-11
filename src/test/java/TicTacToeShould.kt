@@ -64,7 +64,7 @@ class TicTacToeShould {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = [0])
+    @ValueSource(ints = [0, 1, 2])
     fun `a X player wins when 3 fields of a column are taken by the same player`(row: Int) {
         val ticTacToe = TicTacToe()
         ticTacToe.play(Position(0, row))
@@ -79,7 +79,7 @@ class TicTacToeShould {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = [0])
+    @ValueSource(ints = [0, 1, 2])
     fun `a O player wins when 3 fields of a column are taken by the same player`(row: Int) {
         val ticTacToe = TicTacToe()
         ticTacToe.play(Position(0, (row + 1) % 3))
