@@ -14,6 +14,10 @@ class Board() {
     }
 
     fun hasWon(thePlayer: Player): Boolean {
+        return hasFilledAnyRow(thePlayer)
+    }
+
+    private fun hasFilledAnyRow(thePlayer: Player): Boolean {
         return 0.rangeTo(2)
             .any { row(it).belongsAllTo(thePlayer) }
     }
