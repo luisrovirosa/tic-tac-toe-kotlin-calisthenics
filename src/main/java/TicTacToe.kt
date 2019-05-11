@@ -9,11 +9,10 @@ class TicTacToe {
     private var currentPlayer = 0
 
     fun winner(): Player {
-        if (board.hasWon(Player("X"))) {
-            return Player("X")
-        }
-        if (board.hasWon(Player("O"))) {
-            return Player("O")
+        for (player in players){
+            if (board.hasWon(player)) {
+                return player
+            }
         }
         return NoPlayer()
     }
