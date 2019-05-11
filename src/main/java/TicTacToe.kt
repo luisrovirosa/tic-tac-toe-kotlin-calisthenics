@@ -18,7 +18,9 @@ class TicTacToe {
     }
 
     fun play(position: Position) {
-        board.play(currentPlayer, position)
-        currentPlayer = if (currentPlayer == Player("X")) Player("O") else Player(("X"))
+        board.play(currentPlayer(), position)
+        currentPlayer = if (currentPlayer() == Player("X")) Player("O") else Player(("X"))
     }
+
+    private fun currentPlayer() = currentPlayer
 }
