@@ -31,4 +31,8 @@ class TmpFields(private val value: HashMap<Position, Field>) {
         )
     }
 
+    fun replace(position: Position, with: Field) {
+        value[position] = with
+    }
+
 }
