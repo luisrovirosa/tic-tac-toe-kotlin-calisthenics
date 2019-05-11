@@ -31,16 +31,8 @@ class Board() {
     }
 
     private fun hasFilledAnyDiagonal(player: Player): Boolean {
-        return diagonalLeftToRight().belongsAllTo(player)
-                || diagonalRightToLeft().belongsAllTo(player)
-    }
-
-    private fun diagonalLeftToRight(): TmpFields {
-        return fields.diagonalLeftToRight()
-    }
-
-    private fun diagonalRightToLeft(): TmpFields {
-        return fields.diagonalRightToLeft()
+        return fields.diagonalLeftToRight().belongsAllTo(player)
+                || fields.diagonalRightToLeft().belongsAllTo(player)
     }
 
 }
