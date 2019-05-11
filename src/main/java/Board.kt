@@ -36,11 +36,11 @@ class Board() {
     }
 
     private fun row(rowNumber: Int): TmpFields {
-        return TmpFields(value.filterKeys { position -> position.inRow(rowNumber) })
+        return fields.row(rowNumber)
     }
 
     private fun col(columnNumber: Int): TmpFields {
-        return TmpFields(value.filterKeys { position -> position.inColumn(columnNumber) })
+        return fields.col(columnNumber)
     }
 
     private fun diagonalLeftToRight(): Fields {
