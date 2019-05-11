@@ -31,6 +31,7 @@ class Board() {
 
     private fun hasFilledAnyDiagonal(player: Player): Boolean {
         return diagonalLeftToRight().belongsAllTo(player)
+                || diagonalRightToLeft().belongsAllTo(player)
     }
 
     private fun row(rowNumber: Int): Fields {
@@ -41,13 +42,22 @@ class Board() {
         return Fields(value.filterKeys { position -> position.inColumn(columnNumber) }.values)
     }
 
-
     private fun diagonalLeftToRight(): Fields {
         return Fields(
             listOf<Field>(
                 value[Position(0, 0)]!!,
                 value[Position(1, 1)]!!,
-                value[Position( 2, 2)]!!
+                value[Position(2, 2)]!!
+            )
+        )
+    }
+
+    private fun diagonalRightToLeft(): Fields {
+        return Fields(
+            listOf<Field>(
+                value[Position(0, 2)]!!,
+                value[Position(1, 1)]!!,
+                value[Position(2, 0)]!!
             )
         )
     }
