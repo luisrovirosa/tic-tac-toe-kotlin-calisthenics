@@ -10,4 +10,25 @@ class TmpFields(val value: Map<Position, Field>) {
     fun col(columnNumber: Int): TmpFields {
         return TmpFields(value.filterKeys { position -> position.inColumn(columnNumber) })
     }
+
+    fun diagonalLeftToRight(): TmpFields {
+        return TmpFields(
+            value.filterKeys {
+                it == Position(0, 0)
+                        || it == Position(1, 1)
+                        || it == Position(2, 2)
+            }
+        )
+    }
+
+    fun diagonalRightToLeft(): TmpFields {
+        return TmpFields(
+            value.filterKeys {
+                it == Position(0, 2)
+                        || it == Position(1, 1)
+                        || it == Position(2, 0)
+            }
+        )
+    }
+
 }

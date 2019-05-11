@@ -35,24 +35,12 @@ class Board() {
                 || diagonalRightToLeft().belongsAllTo(player)
     }
 
-    private fun diagonalLeftToRight(): Fields {
-        return Fields(
-            listOf<Field>(
-                value[Position(0, 0)]!!,
-                value[Position(1, 1)]!!,
-                value[Position(2, 2)]!!
-            )
-        )
+    private fun diagonalLeftToRight(): TmpFields {
+        return fields.diagonalLeftToRight()
     }
 
-    private fun diagonalRightToLeft(): Fields {
-        return Fields(
-            listOf<Field>(
-                value[Position(0, 2)]!!,
-                value[Position(1, 1)]!!,
-                value[Position(2, 0)]!!
-            )
-        )
+    private fun diagonalRightToLeft(): TmpFields {
+        return fields.diagonalRightToLeft()
     }
 
 }
