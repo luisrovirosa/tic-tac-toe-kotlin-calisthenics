@@ -22,25 +22,17 @@ class Board() {
 
     private fun hasFilledAnyColumn(player: Player): Boolean {
         return 0.rangeTo(2)
-            .any { col(it).belongsAllTo(player) }
+            .any { fields.col(it).belongsAllTo(player) }
     }
 
     private fun hasFilledAnyRow(thePlayer: Player): Boolean {
         return 0.rangeTo(2)
-            .any { row(it).belongsAllTo(thePlayer) }
+            .any { fields.row(it).belongsAllTo(thePlayer) }
     }
 
     private fun hasFilledAnyDiagonal(player: Player): Boolean {
         return diagonalLeftToRight().belongsAllTo(player)
                 || diagonalRightToLeft().belongsAllTo(player)
-    }
-
-    private fun row(rowNumber: Int): TmpFields {
-        return fields.row(rowNumber)
-    }
-
-    private fun col(columnNumber: Int): TmpFields {
-        return fields.col(columnNumber)
     }
 
     private fun diagonalLeftToRight(): Fields {
