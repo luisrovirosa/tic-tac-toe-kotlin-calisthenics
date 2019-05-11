@@ -2,7 +2,7 @@ class Fields(private val value: HashMap<Position, Field>) {
     constructor() : this(HashMap())
 
     fun belongsAllTo(player: Player): Boolean {
-        return value.all { it -> it.value.belongsTo(player) }
+        return value.all { it.value.belongsTo(player) }
     }
 
     fun row(rowNumber: Int): Fields {
