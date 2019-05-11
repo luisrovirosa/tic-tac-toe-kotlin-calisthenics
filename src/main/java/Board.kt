@@ -1,11 +1,9 @@
 class Board() {
-    var value = HashMap<Position, Field>()
     var fields = TmpFields(HashMap())
 
     init {
         for (col in 0..2) {
             for (row in 0..2) {
-                value[Position(row, col)] = Field.of(NoPlayer())
                 fields.replace(Position(row, col), Field.of(NoPlayer()))
             }
         }
