@@ -11,7 +11,6 @@ class Board() {
     }
 
     fun play(player: Player, position: Position) {
-        value[position] = Field.of(player)
         fields.replace(position, Field.of(player))
     }
 
