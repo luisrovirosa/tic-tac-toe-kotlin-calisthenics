@@ -1,5 +1,6 @@
 class Board() {
     var value = HashMap<Position, Field>()
+    var fields = TmpFields(value)
 
     init {
         for (col in 0..2) {
@@ -34,12 +35,12 @@ class Board() {
                 || diagonalRightToLeft().belongsAllTo(player)
     }
 
-    private fun row(rowNumber: Int): Fields {
-        return Fields(value.filterKeys { position -> position.inRow(rowNumber) }.values)
+    private fun row(rowNumber: Int): TmpFields {
+        return TmpFields(value.filterKeys { position -> position.inRow(rowNumber) })
     }
 
-    private fun col(columnNumber: Int): Fields {
-        return Fields(value.filterKeys { position -> position.inColumn(columnNumber) }.values)
+    private fun col(columnNumber: Int): TmpFields {
+        return TmpFields(value.filterKeys { position -> position.inColumn(columnNumber) })
     }
 
     private fun diagonalLeftToRight(): Fields {
