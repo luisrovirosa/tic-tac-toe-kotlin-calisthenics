@@ -5,7 +5,8 @@ import player.Player
 
 class TicTacToe {
     private val board = Board()
-    private var currentPlayer = Player("X")
+    private val players = arrayOf(Player("X"), Player("O"))
+    private var currentPlayer = 0
 
     fun winner(): Player {
         if (board.hasWon(Player("X"))) {
@@ -19,8 +20,8 @@ class TicTacToe {
 
     fun play(position: Position) {
         board.play(currentPlayer(), position)
-        currentPlayer = if (currentPlayer() == Player("X")) Player("O") else Player(("X"))
+        currentPlayer = (currentPlayer + 1) % 2
     }
 
-    private fun currentPlayer() = currentPlayer
+    private fun currentPlayer() = players[currentPlayer]
 }
