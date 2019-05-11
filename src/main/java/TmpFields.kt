@@ -1,14 +1,14 @@
-class TmpFields(val value: Map<Position, Field>) {
+class TmpFields(private val value: HashMap<Position, Field>) {
     fun belongsAllTo(player: Player): Boolean {
         return value.all { it -> it.value.belongsTo(player) }
     }
 
     fun row(rowNumber: Int): TmpFields {
-        return TmpFields(value.filterKeys { position -> position.inRow(rowNumber) })
+        return TmpFields(value.filterKeys { position -> position.inRow(rowNumber) } as HashMap<Position, Field>)
     }
 
     fun col(columnNumber: Int): TmpFields {
-        return TmpFields(value.filterKeys { position -> position.inColumn(columnNumber) })
+        return TmpFields(value.filterKeys { position -> position.inColumn(columnNumber) } as HashMap<Position, Field>)
     }
 
     fun diagonalLeftToRight(): TmpFields {
@@ -17,7 +17,7 @@ class TmpFields(val value: Map<Position, Field>) {
                 it == Position(0, 0)
                         || it == Position(1, 1)
                         || it == Position(2, 2)
-            }
+            } as HashMap<Position, Field>
         )
     }
 
@@ -27,7 +27,7 @@ class TmpFields(val value: Map<Position, Field>) {
                 it == Position(0, 2)
                         || it == Position(1, 1)
                         || it == Position(2, 0)
-            }
+            } as HashMap<Position, Field>
         )
     }
 
