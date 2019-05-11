@@ -1,3 +1,8 @@
+package board
+
+import player.NoPlayer
+import player.Player
+
 class Board {
     private val fields = Fields()
 

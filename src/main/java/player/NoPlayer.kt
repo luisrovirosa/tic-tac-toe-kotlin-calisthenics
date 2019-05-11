@@ -1,3 +1,5 @@
+package player
+
 class NoPlayer : Player("") {
     override fun equals(other: Any?): Boolean {
         return other is NoPlayer

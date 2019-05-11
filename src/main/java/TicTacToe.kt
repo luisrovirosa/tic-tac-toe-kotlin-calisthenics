@@ -1,3 +1,8 @@
+import board.Position
+import board.Board
+import player.NoPlayer
+import player.Player
+
 class TicTacToe {
     private val board = Board()
     private var currentPlayer = Player("X")

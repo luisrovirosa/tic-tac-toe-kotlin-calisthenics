@@ -1,3 +1,5 @@
+package player
+
 open class Player(val name: String) {
 
     override fun equals(other: Any?): Boolean {

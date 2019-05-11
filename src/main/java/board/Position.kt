@@ -1,3 +1,5 @@
+package board
+
 class Position(val row: Int, val column: Int) {
     override fun equals(other: Any?): Boolean {
         if (other is Position){

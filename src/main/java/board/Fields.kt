@@ -1,3 +1,7 @@
+package board
+
+import player.Player
+
 class Fields(private val value: HashMap<Position, Field>) {
     constructor() : this(HashMap())
 
