@@ -15,4 +15,8 @@ class Position(val row: Int, val column: Int) {
     fun inRow(rowNumber: Int): Boolean {
         return row == rowNumber
     }
+
+    fun inColumn(columnNumber: Int): Boolean {
+        return column == columnNumber
+    }
 }

@@ -63,4 +63,35 @@ class TicTacToeShould {
         assertEquals(NoPlayer(), winner)
     }
 
+    @ParameterizedTest
+    @ValueSource(ints = [0])
+    fun `a X player wins when 3 fields of a column are taken by the same player`(row: Int) {
+        val ticTacToe = TicTacToe()
+        ticTacToe.play(Position(0, row))
+        ticTacToe.play(Position(0, (row + 1) % 3))
+        ticTacToe.play(Position(1, row))
+        ticTacToe.play(Position(0, (row + 2) % 3))
+        ticTacToe.play(Position(2, row))
+
+        val winner = ticTacToe.winner()
+
+        assertEquals(Player("X"), winner)
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = [0])
+    fun `a O player wins when 3 fields of a column are taken by the same player`(row: Int) {
+        val ticTacToe = TicTacToe()
+        ticTacToe.play(Position(0, (row + 1) % 3))
+        ticTacToe.play(Position(0, row))
+        ticTacToe.play(Position(1, (row + 1) % 3))
+        ticTacToe.play(Position(1, row))
+        ticTacToe.play(Position(0, (row + 2) % 3))
+        ticTacToe.play(Position(2, row))
+
+        val winner = ticTacToe.winner()
+
+        assertEquals(Player("O"), winner)
+    }
+
 }

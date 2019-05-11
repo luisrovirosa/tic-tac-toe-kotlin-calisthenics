@@ -15,6 +15,11 @@ class Board() {
 
     fun hasWon(thePlayer: Player): Boolean {
         return hasFilledAnyRow(thePlayer)
+                || hasFilledAnyColumn(thePlayer)
+    }
+
+    private fun hasFilledAnyColumn(player: Player): Boolean {
+        return col(0).belongsAllTo(player)
     }
 
     private fun hasFilledAnyRow(thePlayer: Player): Boolean {
@@ -22,9 +27,13 @@ class Board() {
             .any { row(it).belongsAllTo(thePlayer) }
     }
 
-
     private fun row(rowNumber: Int): Fields {
         return Fields(value.filterKeys { position -> position.inRow(rowNumber) }.values)
+    }
+
+
+    private fun col(columnNumber: Int): Fields {
+        return Fields(value.filterKeys { position -> position.inColumn(columnNumber) }.values )
     }
 
 }
