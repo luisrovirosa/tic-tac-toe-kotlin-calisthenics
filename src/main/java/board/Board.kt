@@ -26,12 +26,12 @@ class Board {
 
     private fun hasFilledAnyColumn(player: Player): Boolean {
         return 0.rangeTo(2)
-            .any { fields.col(it).belongsAllTo(player) }
+            .any { fields.onColumn(it).belongsAllTo(player) }
     }
 
     private fun hasFilledAnyRow(thePlayer: Player): Boolean {
         return 0.rangeTo(2)
-            .any { fields.row(it).belongsAllTo(thePlayer) }
+            .any { fields.onRow(it).belongsAllTo(thePlayer) }
     }
 
     private fun hasFilledAnyDiagonal(player: Player): Boolean {

@@ -9,11 +9,11 @@ class Fields(private val value: HashMap<Position, Field>) {
         return value.all { it.value.belongsTo(player) }
     }
 
-    fun row(rowNumber: Int): Fields {
+    fun onRow(rowNumber: Int): Fields {
         return Fields(value.filterKeys { position -> position.inRow(rowNumber) } as HashMap<Position, Field>)
     }
 
-    fun col(columnNumber: Int): Fields {
+    fun onColumn(columnNumber: Int): Fields {
         return Fields(value.filterKeys { position -> position.inColumn(columnNumber) } as HashMap<Position, Field>)
     }
 
