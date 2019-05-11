@@ -1,5 +1,5 @@
-class Board() {
-    var fields = TmpFields(HashMap())
+class Board {
+    private val fields = TmpFields()
 
     init {
         for (col in 0..2) {

@@ -1,4 +1,6 @@
 class TmpFields(private val value: HashMap<Position, Field>) {
+    constructor() : this(HashMap())
+
     fun belongsAllTo(player: Player): Boolean {
         return value.all { it -> it.value.belongsTo(player) }
     }
